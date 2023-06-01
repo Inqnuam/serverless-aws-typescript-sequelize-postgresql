@@ -1,0 +1,26 @@
+{
+  "name": "serverless-aws-typescript-sequelize-postgresql",
+  "author": "Inqnuam",
+  "description": "Example project to develop, test and deploy PostgreSQL AWS Lambda ",
+  "license": "MIT",
+  "repository": "https://github.com/Inqnuam/serverless-aws-typescript-sequelize-postgresql",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.115",
+    "cross-env": "^7.0.3",
+    "pg": "^8.11.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.31.1",
+    "serverless": "^3.31.0",
+    "serverless-aws-lambda": "^4.5.8",
+    "serverless-aws-lambda-vitest": "^1.2.2",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "sls": "sls",
+    "start": "cross-env SLS_DEBUG=* sls aws-lambda -s local",
+    "start:db": "docker-compose up -d",
+    "test": "sls aws-lambda -s local vitest",
+    "test:oneshot": "sls aws-lambda -s local vitest oneshot",
+    "deploy": "sls deploy -s prod"
+  }
+}
